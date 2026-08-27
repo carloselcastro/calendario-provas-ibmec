@@ -93,7 +93,7 @@ sexta — não em qualquer outro dia. (A exceção está na
 Requer **Python 3.10 ou superior**.
 
 ```bash
-git clone <url-do-seu-repositorio>
+git clone https://github.com/carloselcastro/calendario-provas-ibmec.git
 cd calendario-provas-ibmec
 pip install -r requirements.txt
 ```
@@ -126,20 +126,20 @@ mas **o resultado precisa ser conferido** ([seção 4](#4-passo-2--conferir-o-cs
 Uma linha por **disciplina × turma × curso**. Se a mesma disciplina é ofertada
 para dois cursos, são duas linhas.
 
-| Coluna | Obrigatória | O que é |
-|---|---|---|
-| `codigo` | sim | Código da disciplina (`IBM0048`, `MAT101`...) |
-| `materia` | sim | Nome da disciplina |
-| `turma` | sim | Código numérico da turma na grade (`8001`) |
-| `cod_turma` | recomendada | Código da **turma real de alunos** (`AA`, `AB`, `AC`) |
-| `sala` | recomendada | Sala da prova; `xx` se não souber |
-| `dia_1` | sim | Dia da 1ª aula semanal: `Segunda`…`Sexta` |
-| `hora_1` | sim | Hora da 1ª aula, `HH:MM` |
-| `dia_2` | sim (pode ficar vazia) | Dia da 2ª aula semanal |
-| `hora_2` | sim (pode ficar vazia) | Hora da 2ª aula |
-| `periodo` | sim | Período/semestre, número inteiro |
-| `professor` | sim | Um nome por linha |
-| `curso` | sim | Nome do curso |
+| Coluna      | Obrigatória            | O que é                                               |
+| ----------- | ---------------------- | ----------------------------------------------------- |
+| `codigo`    | sim                    | Código da disciplina (`IBM0048`, `MAT101`...)         |
+| `materia`   | sim                    | Nome da disciplina                                    |
+| `turma`     | sim                    | Código numérico da turma na grade (`8001`)            |
+| `cod_turma` | recomendada            | Código da **turma real de alunos** (`AA`, `AB`, `AC`) |
+| `sala`      | recomendada            | Sala da prova; `xx` se não souber                     |
+| `dia_1`     | sim                    | Dia da 1ª aula semanal: `Segunda`…`Sexta`             |
+| `hora_1`    | sim                    | Hora da 1ª aula, `HH:MM`                              |
+| `dia_2`     | sim (pode ficar vazia) | Dia da 2ª aula semanal                                |
+| `hora_2`    | sim (pode ficar vazia) | Hora da 2ª aula                                       |
+| `periodo`   | sim                    | Período/semestre, número inteiro                      |
+| `professor` | sim                    | Um nome por linha                                     |
+| `curso`     | sim                    | Nome do curso                                         |
 
 > **Por que `cod_turma` importa tanto.** É ele que separa os grupos de alunos
 > dentro de um mesmo período. Sem ele, o script trata o período inteiro como
@@ -152,7 +152,7 @@ para dois cursos, são duas linhas.
 Copie o texto abaixo, anexe o seu PDF ou planilha e envie. Ele também está em
 [`PROMPT_LLM.md`](PROMPT_LLM.md), para copiar sem a formatação do README.
 
-````text
+```text
 Você vai converter um quadro de horários acadêmico em um arquivo CSV com um
 formato exato. Vou anexar o arquivo original (PDF ou planilha).
 
@@ -215,7 +215,7 @@ dois cursos, gere DUAS linhas — iguais em tudo, menos na coluna `curso` (e no
    deixou vazios, disciplinas com mais de dois encontros semanais, aulas com
    dois professores, horários que não se encaixaram nos padrões, e qualquer
    linha que você tenha achado inconsistente no documento original.
-````
+```
 
 ### Se o seu arquivo for muito grande
 
@@ -232,10 +232,13 @@ o script, confira:
 
 - [ ] O número de linhas bate com o número de ofertas do documento original.
 - [ ] Os dias da semana estão escritos com acento (`Terça`, não `Terca`) —
+  
       embora o script aceite as duas formas e mais alguns sinônimos.
 - [ ] Os horários estão no formato `HH:MM` e correspondem aos horários reais
+  
       da unidade.
 - [ ] O nome de cada curso está escrito **exatamente igual** em todas as suas
+  
       linhas. `ENGENHARIA DE PRODUÇÃO` e `Engenharia de Produção` viram dois
       cursos diferentes.
 - [ ] O nome de cada professor está grafado de forma consistente.
@@ -323,18 +326,18 @@ acúmulos — cada 100 é uma turma com duas provas num mesmo dia.
 
 ### A planilha de trabalho (`ARQUIVO_SAIDA`)
 
-| Aba | Conteúdo |
-|---|---|
-| `Calendário Visual` | Grade por curso/período/turma, com as datas em colunas |
-| `Dados do Calendário` | Uma linha por prova alocada — é a fonte para conferências |
-| `Conflitos` | Turmas com mais de uma prova no mesmo dia, com gravidade |
-| `Diagnóstico` | Métricas gerais da solução |
-| `Concentração Professores` | Quantos dias cada professor ficou usando |
-| `Ofertas` | As ofertas consolidadas e os grupos que cada uma atende |
-| `Não Alocadas` | Disciplinas sem data compatível — tratar manualmente |
-| `Excluídas da Alocação` | (ED)/(E), se você tiver ligado a exclusão |
-| `Validação` / `Validação Ofertas` | Avisos sobre o CSV de entrada |
-| `Parâmetros` | Tudo que foi usado nesta execução |
+| Aba                               | Conteúdo                                                  |
+| --------------------------------- | --------------------------------------------------------- |
+| `Calendário Visual`               | Grade por curso/período/turma, com as datas em colunas    |
+| `Dados do Calendário`             | Uma linha por prova alocada — é a fonte para conferências |
+| `Conflitos`                       | Turmas com mais de uma prova no mesmo dia, com gravidade  |
+| `Diagnóstico`                     | Métricas gerais da solução                                |
+| `Concentração Professores`        | Quantos dias cada professor ficou usando                  |
+| `Ofertas`                         | As ofertas consolidadas e os grupos que cada uma atende   |
+| `Não Alocadas`                    | Disciplinas sem data compatível — tratar manualmente      |
+| `Excluídas da Alocação`           | (ED)/(E), se você tiver ligado a exclusão                 |
+| `Validação` / `Validação Ofertas` | Avisos sobre o CSV de entrada                             |
+| `Parâmetros`                      | Tudo que foi usado nesta execução                         |
 
 ### Os arquivos oficiais (`PASTA_OFICIAL`)
 
@@ -424,11 +427,13 @@ Durante a execução, o passo 7 imprime:
 Sem data de Sexta: essas provas podem cair em Terça, Quarta, Quinta
   (as noturnas às 20:40 em vez de 18:40, as diurnas no horário da aula).
 ```
+
 Informativo: o calendário não tem sexta e a regra de realocação foi acionada.
 
 ```
 Turma conjunta (mesma aula, uma prova só): IBM1741 = IBM4023 — sala 43.
 ```
+
 Informativo: os dois códigos foram identificados como a mesma aula e ficarão
 sempre na mesma data e horário. **Confira se faz sentido.**
 
@@ -436,6 +441,7 @@ sempre na mesma data e horário. **Confira se faz sentido.**
 ATENÇÃO: Fulano tem IBM0108 (sala 47) e IBM0033 (sala 35)
   no mesmo horário, em salas diferentes. Conferir a grade.
 ```
+
 O mesmo professor tem duas aulas simultâneas em salas diferentes na **grade de
 origem**. Ou é erro de digitação no CSV (e as salas deveriam ser iguais — aí o
 script passa a uni-las como turma conjunta sozinho), ou é um problema real da
