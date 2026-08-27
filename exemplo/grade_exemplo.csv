@@ -1,0 +1,16 @@
+codigo,materia,turma,cod_turma,sala,dia_1,hora_1,dia_2,hora_2,periodo,professor,curso
+EXE0101,Cálculo I,9001,AA,101,Segunda,07:30,Quarta,07:30,1,Ana Ribeiro,ENGENHARIA EXEMPLO
+EXE0102,Álgebra Linear,9001,AA,101,Terça,09:50,Quinta,09:50,1,Bruno Carvalho,ENGENHARIA EXEMPLO
+EXE0103,Introdução à Programação,9001,AA,102,Quarta,09:50,Sexta,09:50,1,Carla Menezes,ENGENHARIA EXEMPLO
+EXE0104,Física I,9001,AA,101,Sexta,07:30,,,1,Diego Alencar,ENGENHARIA EXEMPLO
+EXE0201,Estruturas de Dados,9002,AA,103,Segunda,09:50,Quarta,09:50,2,Carla Menezes,ENGENHARIA EXEMPLO
+EXE0202,Cálculo II,9002,AA,103,Terça,07:30,Quinta,07:30,2,Ana Ribeiro,ENGENHARIA EXEMPLO
+EXE0203,Circuitos Elétricos,9002,AA,104,Sexta,13:30,,,2,Diego Alencar,ENGENHARIA EXEMPLO
+EXE0101,Cálculo I,9003,AB,105,Terça,13:30,Quinta,13:30,1,Ana Ribeiro,ADMINISTRAÇÃO EXEMPLO
+EXE0301,Fundamentos de Administração,9003,AB,105,Segunda,13:30,Quarta,13:30,1,Elisa Fontes,ADMINISTRAÇÃO EXEMPLO
+EXE0302,Contabilidade Introdutória,9003,AB,106,Sexta,15:50,,,1,Fábio Nogueira,ADMINISTRAÇÃO EXEMPLO
+EXE0401,Projeto Integrador,9004,AA,201,Terça,15:50,Quinta,15:50,3,Gabriela Souto,ADMINISTRAÇÃO EXEMPLO
+EXE0402,Projeto Aplicado,9004,AA,201,Terça,15:50,Quinta,15:50,3,Gabriela Souto,ENGENHARIA EXEMPLO
+EXE0501,Gestão de Projetos,9005,AA,301,Segunda,18:40,,,7,Henrique Vasques,ADMINISTRAÇÃO EXEMPLO
+EXE0502,Empreendedorismo (e),9005,AA,Teams,Sexta,18:40,,,7,Isabel Moraes,ADMINISTRAÇÃO EXEMPLO
+EXE0503,Tópicos Avançados (ed),9005,AA,302,Quarta,18:40,,,7,Henrique Vasques,ADMINISTRAÇÃO EXEMPLO

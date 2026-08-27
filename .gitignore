@@ -1,0 +1,19 @@
+# Saídas geradas
+*.xlsx
+OFICIAL/
+
+# Dados da unidade — não versionar grade real
+grade.csv
+*.csv
+!exemplo/*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Sistema
+.DS_Store
+Thumbs.db

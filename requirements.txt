@@ -1,0 +1,6 @@
+# Testado com Python 3.12.
+# As versões abaixo são os mínimos verificados; versões mais novas
+# das mesmas séries devem funcionar.
+pandas>=2.0
+openpyxl>=3.1        # o layout oficial usa rich text (negrito parcial na célula)
+ortools>=9.8         # solver CP-SAT
